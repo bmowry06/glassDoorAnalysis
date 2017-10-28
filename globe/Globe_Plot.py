@@ -87,15 +87,6 @@ lonsf = np.array(lons13)
 
 sals1 = []
 
-# for i in range(len([item[1] for item in df_globe_all])):
-#     if not any((df_globe4['city'] == [item[1] for item in df_globe_all][i].strip()) & (df_globe4['state'] == [item[2] for item in df_globe_all][i].strip())) == False:
-#         sals11 = np.log10(df_globe1_drop_sals[i])
-#         sals1.append(sals11)
-#     else:
-#         sals11 = 'NA'
-#         sals1.append(sals11)
-# sals12 = [x for x in sals1 if x != 'NA']
-
 for i in range(len([item[1] for item in df_globe_all])):
     if not any((df_globe4['city'] == [item[1] for item in df_globe_all][i].strip()) & (df_globe4['state'] == [item[2] for item in df_globe_all][i].strip())) == False:
         sals11 = df_globe1_drop_sals[i]
@@ -125,12 +116,6 @@ lats = latsf
 lons = lonsf
 values = salsf
 
-# plot = GlobePlot(lats=lats, lons=lons, data=values)
-#
-# plot.show(title='Pet Project 1', creator='Ben Hoscheit')
-#
-# numpy data file to .json file format for WebGL Globe
-
 all_np = []
 
 for i in range(len(latsf)):
@@ -141,5 +126,5 @@ all_npf.insert(0, "2017")
 all_npf2 = [all_npf]
 print(all_npf2)
 
-file_path = "C:/Users/Ben Hoscheit/Desktop/webgl-globe-master/PetProject1/glassdoor_scrape.json"
+file_path = "path_to_directory/filename.json"
 json.dump(all_npf2, codecs.open(file_path, 'w', encoding='utf-8'), separators=(',', ':'), sort_keys=True, indent=4)
